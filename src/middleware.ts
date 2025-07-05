@@ -46,6 +46,10 @@ export async function middleware(request: NextRequest) {
     pathname.includes(path)
   )
 
+
+
+
+  
   const currentLocale =
     locales.find((locale) => pathname.startsWith(`/${locale}`)) || fallbackLng
 

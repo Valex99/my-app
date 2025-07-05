@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Rolex Color Palette */
+  --rolex-green: #005830;
+  --rolex-dark-green: #1E3932;
+  --rolex-gold: #D4AF37;
+  --rolex-champagne: #C5B358;
+  --rolex-black: #0E0E0E;
+  --rolex-charcoal: #1C1C1C;
+  --rolex-ivory: #F5F5F5;
+  --rolex-offwhite: #ECE8E1;
+  --rolex-silver: #C0C0C0;
+  --rolex-white: #ffffff;
 }
 
 @theme inline {
@@ -11,11 +20,24 @@
   --font-sans: var(--font-founders-grotesk);
   --font-mono: var(--font-founders-grotesk);
   --font-founders-grotesk: var(--font-founders-grotesk);
+
+  
+  --color-rolex-green: var(--rolex-green);
+  --color-rolex-dark-green: var(--rolex-dark-green);
+  --color-rolex-gold: var(--rolex-gold);
+  --color-rolex-champagne: var(--rolex-champagne);
+  --color-rolex-black: var(--rolex-black);
+  --color-rolex-charcoal: var(--rolex-charcoal);
+  --color-rolex-ivory: var(--rolex-ivory);
+  --color-rolex-offwhite: var(--rolex-offwhite);
+  --color-rolex-silver: var(--rolex-silver);
+  --color-rolex-white: var(--rolex-white);
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
     --foreground: #ededed;
   }
 }

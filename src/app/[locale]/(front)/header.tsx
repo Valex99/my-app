@@ -5,9 +5,9 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm">
       <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between text-rolex-green">
           <Link href="/" className="text-xl font-bold">
-            Beestro Bled
+            Watch Project
           </Link>
           <div className="hidden md:flex space-x-6">
             <Link href="/about-us" className="hover:text-gray-600">
