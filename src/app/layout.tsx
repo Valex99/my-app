@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
 //import { Toaster } from 'sonner'
+import React from "react";
+import { locales, fallbackLng } from '@/i18n/settings'
 
 const foundersGrotesk = localFont({
   src: [
