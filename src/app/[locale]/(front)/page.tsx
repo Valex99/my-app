@@ -1,17 +1,22 @@
 import { LocaleTypes } from "@/i18n/locales/settings";
+import Section from "@/app/components/layout/section";
+import Container from "@/app/components/layout/container";
 
 type PageProps = {
-  params: Promise<{ locale: LocaleTypes }>
-}
+  params: Promise<{ locale: LocaleTypes }>;
+};
 
 export default async function Page(props: PageProps) {
   const { locale } = await props.params;
   console.log(locale);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Home</h1>
-      <p className="text-lg">Welcome to Beestro Bled!</p>
+    <div>
+      <Section bg="rolex-gold" className="h-[calc(100vh-70px)]">
+        <Container>
+          <h1>HOMEPAGE</h1>
+        </Container>
+      </Section>
     </div>
   );
 }

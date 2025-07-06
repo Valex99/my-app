@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode
   className?: string
-  bg?: 'primary' | 'muted' | 'secondary' | 'accent' | 'inverted'
+  bg?: 'rolex-green' | 'rolex-gold' | 'rolex-champagne' | 'rolex-black' | 'rolex-charcoal' | 'rolex-ivory' | 'rolex-offwhite' | 'rolex-silver' | 'rolex-white'
   noPadd?: boolean
 }
 
@@ -14,12 +14,9 @@ const Section = ({
   noPadd,
   ...props
 }: SectionProps) => {
-  const bgClass = bg
-    ? bg === 'inverted'
-      ? 'bg-foreground text-background'
-      : `bg-${bg} text-${bg}-foreground`
-    : 'bg-background text-foreground'
+  const bgClass = bg ? `bg-${bg}` : 'bg-rolex-white'
   const defaultPadding = noPadd ? '' : 'py-16 md:py-20 lg:py-28'
+  
 
   // if (bg === 'primary')
   //   defaultPadding = 'py-8 md:py-12 lg:py-32 my-4 md:my-8 lg:my-16'

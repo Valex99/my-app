@@ -4,11 +4,11 @@ import { Menu } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="bg-rolex-green shadow-sm">
-      <nav className=" mx-auto px-4 py-4">
-        <div className="flex items-center justify-between text-rolex-gold">
+    <header className="bg-rolex-green shadow-sm h-[70px]">
+      <nav className="max-w-screen-xl mx-auto px-4 py-4 h-full">
+        <div className="flex items-center justify-between text-rolex-gold h-full">
           <Link href="/" className="text-xl font-bold">
-            Watch Project
+            ROLEX
           </Link>
           <Menu className="w-6 h-6" />
         </div>
