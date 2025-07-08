@@ -1,14 +1,66 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { div } from "framer-motion/client";
+
+const navigationItems = [
+  { key: "about-us", label: "O nas", href: "/about-us" },
+  { key: "gallery", label: "Galerija", href: "/gallery" },
+  { key: "reservations", label: "Rezervacije", href: "/reservations" },
+  { key: "events", label: "Dogodki", href: "/events" },
+  { key: "tastings", label: "Degustacije", href: "/tastings" },
+  { key: "menu", label: "Meni", href: "/menu" },
+];
 
 export default function Nav() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="fixed bottom-[12%] w-full h-[45px] max-w-[130px] left-1/2 -translate-x-1/2 flex z-50 shadow-lg shadow-black/40 rounded-xl bg-rolex-white">
-      <div className="w-1/3 h-full relative rounded-l-xl overflow-hidden ">
-        <Image src="/img/Watch-project-logo.png" alt="Watch" fill />
-      </div>
-      <p className="flex flex-1 text-rolex-black font-founders-grotesk text-center items-center justify-center text-[16px]">
-        Navigation
-      </p>
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center">
+      {/* Animated menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="mb-2 w-[320px] rounded-2xl shadow-xl bg-white/95 backdrop-blur-md p-4 flex flex-col gap-2"
+          >
+            {navigationItems.map((item) => (
+              <a
+                key={item.key}
+                href={item.href}
+                className="block px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-800 text-lg transition"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Collapsed nav bar */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-2 px-4 py-2 rounded-2xl shadow-xl bg-white/95 backdrop-blur-md transition hover:scale-105 active:scale-95"
+        style={{ minWidth: 140 }}
+        aria-label="Open navigation menu"
+      >
+        {/* Replace with your logo or icon */}
+        <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden">
+          <Image
+            src="/img/Watch-project-logo.png"
+            alt="Logo"
+            width={32}
+            height={32}
+          />
+        </div>
+        <span className="text-gray-900 font-medium text-base">Navigation</span>
+      </button>
     </div>
   );
 }
