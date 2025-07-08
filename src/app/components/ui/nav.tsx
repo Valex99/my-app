@@ -19,7 +19,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center">
+    <div className="fixed bottom-15 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center">
       {/* Animated menu */}
       <AnimatePresence>
         {open && (
@@ -69,7 +69,7 @@ export default function Nav() {
       {!open && (
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex items-center gap-2 px-4 py-2 rounded-2xl shadow-xl bg-white/95 backdrop-blur-md transition hover:scale-105 active:scale-95"
+          className="bg-rolex-gold flex items-center gap-2 px-4 py-2 rounded-2xl shadow-xl backdrop-blur-md transition hover:scale-105 active:scale-95"
           style={{ minWidth: 140 }}
           aria-label="Open navigation menu"
         >
