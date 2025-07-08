@@ -30,8 +30,20 @@ const Section = ({
   //   defaultPadding = 'py-8 md:py-12 lg:py-32 my-4 md:my-8 lg:my-16'
 
   // console.log("🚀 ~ file: section.tsx:13 ~ Section ~ bgClass:", bgClass)
+
+  // Set text class based on background color
+  let textClass = "";
+  if (bg === "rolex-white") {
+    textClass = "text-rolex-black";
+  } else if (bg === "rolex-black") {
+    textClass = "text-rolex-white";
+  }
+
   return (
-    <section {...props} className={cn(defaultPadding, bgClass, className)}>
+    <section
+      {...props}
+      className={cn(defaultPadding, bgClass, textClass, className)}
+    >
       {children}
     </section>
   );
